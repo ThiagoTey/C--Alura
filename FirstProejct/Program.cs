@@ -1,6 +1,10 @@
 ﻿// Screen Sound
 string msgBoasVindas = "Boas Vindas ao Screen Sound";
-List<string> listaDeBandas = new List<string> { "Slipknot", "The Beatles", "Artic Monkeys"};
+//List<string> listaDeBandas = new List<string> { "Slipknot", "The Beatles", "Artic Monkeys"};
+
+Dictionary<string, List<int>> bandasRegistradas = new Dictionary<string, List<int>>();
+bandasRegistradas.Add("Slipknot", new List<int> { 10, 9, 10, 8 });
+bandasRegistradas.Add("Link Park", new List<int>());
 
 void ExibirLogo()
 {
@@ -47,12 +51,11 @@ void ExibirOpcoesDoMenu()
 void RegistrarBanda()
 {
     Console.Clear();
-    Console.WriteLine("******************************************");
-    Console.WriteLine("Registro de bandas");
-    Console.WriteLine("******************************************");
+    ExibirTitudoDaOpcao(titulo: "Registrar Bandas");
+
     Console.Write("Digite o nome da banda que deseja registrar : ");
     string nomeBanda = Console.ReadLine()!;
-    listaDeBandas.Add(nomeBanda);
+    bandasRegistradas.Add(nomeBanda, new List<int>());
     Console.WriteLine($"A banda {nomeBanda} foi registrada!");
     Thread.Sleep(2000);
     Console.Clear();
@@ -62,18 +65,31 @@ void RegistrarBanda()
 void MostrarBandas()
 {
     Console.Clear();
-    Console.WriteLine("******************************************");
-    Console.WriteLine("Exibição de bandas");
-    Console.WriteLine("******************************************\n");
+    ExibirTitudoDaOpcao(titulo: "Registro de Bandas");
 
-    for(int i = 0; i < listaDeBandas.Count; i++)
+    //for(int i = 0; i < listaDeBandas.Count; i++)
+    //{
+    //    Console.WriteLine($"Banda : {listaDeBandas[i]}");
+    //}
+
+    foreach(string banda in bandasRegistradas.Keys)
     {
-        Console.WriteLine($"Banda : {listaDeBandas[i]}");
+        Console.WriteLine($"Banda : {banda}");
     }
+
     Console.WriteLine("\nDigite qualquer tecla para voltar");
     Console.ReadKey();
     Console.Clear();
     ExibirOpcoesDoMenu();
+}
+
+void ExibirTitudoDaOpcao(string titulo)
+{
+    int qtdeLetra = titulo.Length;
+    string asteriscos = string.Empty.PadLeft(qtdeLetra, '*');
+    Console.WriteLine(asteriscos);
+    Console.WriteLine(titulo);
+    Console.WriteLine(asteriscos + "\n");
 }
 
 ExibirOpcoesDoMenu();
