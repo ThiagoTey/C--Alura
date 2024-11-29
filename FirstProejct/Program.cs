@@ -1,7 +1,8 @@
 ﻿// Screen Sound
 string msgBoasVindas = "Boas Vindas ao Screen Sound";
+List<string> listaDeBandas = new List<string> { "Slipknot", "The Beatles", "Artic Monkeys"};
 
-void ExibirMsgBoasVindas()
+void ExibirLogo()
 {
     Console.WriteLine(@"
 ░██████╗░█████╗░██████╗░███████╗███████╗███╗░░██╗░██████╗░█████╗░██╗░░░██╗███╗░░██╗██████╗░
@@ -15,6 +16,7 @@ void ExibirMsgBoasVindas()
 
 void ExibirOpcoesDoMenu()
 {
+    ExibirLogo();
     Console.WriteLine("\nDigite 1 para registrar uma banda");
     Console.WriteLine("Digite 2 para mostrar todas as bandas");
     Console.WriteLine("Digite 3 para avalisar uma banda");
@@ -27,9 +29,9 @@ void ExibirOpcoesDoMenu()
     
     switch (opcaoEscolhidaNumerica)
     {
-        case 1: Console.WriteLine($"Você escolheu a opção {opcaoEscolhidaNumerica}");
+        case 1: RegistrarBanda();
             break;
-        case 2: Console.WriteLine($"Você escolheu a opção {opcaoEscolhidaNumerica}");
+        case 2: MostrarBandas();
             break;
         case 3: Console.WriteLine($"Você escolheu a opção {opcaoEscolhidaNumerica}");
             break;
@@ -42,7 +44,38 @@ void ExibirOpcoesDoMenu()
     }
 }
 
-ExibirMsgBoasVindas();
+void RegistrarBanda()
+{
+    Console.Clear();
+    Console.WriteLine("******************************************");
+    Console.WriteLine("Registro de bandas");
+    Console.WriteLine("******************************************");
+    Console.Write("Digite o nome da banda que deseja registrar : ");
+    string nomeBanda = Console.ReadLine()!;
+    listaDeBandas.Add(nomeBanda);
+    Console.WriteLine($"A banda {nomeBanda} foi registrada!");
+    Thread.Sleep(2000);
+    Console.Clear();
+    ExibirOpcoesDoMenu();
+}
+
+void MostrarBandas()
+{
+    Console.Clear();
+    Console.WriteLine("******************************************");
+    Console.WriteLine("Exibição de bandas");
+    Console.WriteLine("******************************************\n");
+
+    for(int i = 0; i < listaDeBandas.Count; i++)
+    {
+        Console.WriteLine($"Banda : {listaDeBandas[i]}");
+    }
+    Console.WriteLine("\nDigite qualquer tecla para voltar");
+    Console.ReadKey();
+    Console.Clear();
+    ExibirOpcoesDoMenu();
+}
+
 ExibirOpcoesDoMenu();
 
 

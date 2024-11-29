@@ -14,8 +14,7 @@ while (continuar == 1)
 
     while (numeroSelecionado != randomNumber)
     {
-        string numeroSelecionadoString = Console.ReadLine()!;
-        numeroSelecionado = int.Parse(numeroSelecionadoString);
+         numeroSelecionado = int.Parse(Console.ReadLine()!);
 
         if (randomNumber > numeroSelecionado)
         {
