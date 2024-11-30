@@ -39,7 +39,7 @@ void ExibirOpcoesDoMenu()
             break;
         case 3: AvaliarBanda();
             break;
-        case 4: Console.WriteLine($"Você escolheu a opção {opcaoEscolhidaNumerica}");
+        case 4: MostrarAvaliacaoBanda();
             break;
         case -1: Console.WriteLine("Adeus");
             break;
@@ -109,6 +109,14 @@ void AvaliarBanda()
         Console.Clear();
         ExibirOpcoesDoMenu();
     }
+}
+
+void MostrarAvaliacaoBanda()
+{
+    Console.Clear();
+    ExibirTitudoDaOpcao("Mostrar Avaliação da banda");
+
+    Console.WriteLine("");
 }
 
 void ExibirTitudoDaOpcao(string titulo)
