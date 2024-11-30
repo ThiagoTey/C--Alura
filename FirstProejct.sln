@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adivinha", "Adicinha\Adivin
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotaAlunos", "NotaAlunos\NotaAlunos.csproj", "{9E640940-219E-4E7E-990C-7591919483BE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EstoqueLoja", "EstoqueLoja\EstoqueLoja.csproj", "{86B5EE2D-6EF6-48D3-8430-A4FE6A5E37FD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{9E640940-219E-4E7E-990C-7591919483BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9E640940-219E-4E7E-990C-7591919483BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9E640940-219E-4E7E-990C-7591919483BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86B5EE2D-6EF6-48D3-8430-A4FE6A5E37FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86B5EE2D-6EF6-48D3-8430-A4FE6A5E37FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86B5EE2D-6EF6-48D3-8430-A4FE6A5E37FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86B5EE2D-6EF6-48D3-8430-A4FE6A5E37FD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
