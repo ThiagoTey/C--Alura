@@ -4,7 +4,7 @@ string msgBoasVindas = "Boas Vindas ao Screen Sound";
 
 Dictionary<string, List<int>> bandasRegistradas = new Dictionary<string, List<int>>();
 bandasRegistradas.Add("Slipknot", new List<int> { 10, 9, 10, 8 });
-bandasRegistradas.Add("Link Parkin", new List<int>());
+bandasRegistradas.Add("Linkin Park", new List<int>());
 
 void ExibirLogo()
 {
@@ -116,7 +116,33 @@ void MostrarAvaliacaoBanda()
     Console.Clear();
     ExibirTitudoDaOpcao("Mostrar Avaliação da banda");
 
-    Console.WriteLine("");
+    Console.WriteLine("Digite o nome da banda que deseja avaliar");
+    string nomeBanda = Console.ReadLine()!;
+
+    if(bandasRegistradas.ContainsKey(nomeBanda))
+    {
+        //int media = 0;
+        //foreach (var nota in bandasRegistradas[nomeBanda])
+        //{
+        //    media = nota + media;
+        //}
+        //media = media / bandasRegistradas[nomeBanda].Count;
+        List<int> notaBanda = bandasRegistradas[nomeBanda];
+
+        Console.WriteLine($"A media de notas da banda {nomeBanda} e de : {notaBanda.Average()}");
+        Console.WriteLine("Digite qualquer tecla para voltar");
+        Console.ReadKey();
+        Console.Clear();
+        ExibirOpcoesDoMenu();
+    }
+    else
+    {
+        Console.WriteLine($"Bnada {nomeBanda} não registrada");
+        Console.WriteLine("Digite qualquer tecla para voltar");
+        Console.ReadKey();
+        Console.Clear();
+        ExibirOpcoesDoMenu();
+    }
 }
 
 void ExibirTitudoDaOpcao(string titulo)
